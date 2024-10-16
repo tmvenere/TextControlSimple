@@ -1,0 +1,8 @@
+C:\Users\TomasVenere\source\repos\TextControl\TextControl\obj\Release\net6.0\PubTmp\Out\TextControl.exe
+C:\Users\TomasVenere\source\repos\TextControl\TextControl\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Users\TomasVenere\source\repos\TextControl\TextControl\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\TomasVenere\source\repos\TextControl\TextControl\obj\Release\net6.0\PubTmp\Out\TextControl.dll
+C:\Users\TomasVenere\source\repos\TextControl\TextControl\obj\Release\net6.0\PubTmp\Out\TextControl.deps.json
+C:\Users\TomasVenere\source\repos\TextControl\TextControl\obj\Release\net6.0\PubTmp\Out\TextControl.runtimeconfig.json
+C:\Users\TomasVenere\source\repos\TextControl\TextControl\obj\Release\net6.0\PubTmp\Out\TextControl.pdb
+C:\Users\TomasVenere\source\repos\TextControl\TextControl\obj\Release\net6.0\PubTmp\Out\TXTextControl.Web.DocumentEditor.dll

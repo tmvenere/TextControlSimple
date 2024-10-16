@@ -1,0 +1,64 @@
+﻿@using TXTextControl.Web.MVC
+
+<div style="width: 100%; height: 100vh;">
+    @Html.TXTextControl().TextControl(settings =>
+            {
+                settings.Width = "100%";
+                settings.Height = "100%";
+            }).Render()
+</div>
+
+<input type="text" id="userInput" placeholder="Your name" />
+<input type="text" id="messageInput" placeholder="Start typing..." />
+
+<div id="messagesList"></div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.min.js"></script>
+    <script type="text/javascript">
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/documentHub")
+            .build();
+
+        connection.start().then(function () {
+            console.log("Connected to SignalR hub");
+
+            // Join a room called "defaultRoom"
+            connection.invoke("JoinRoom", "defaultRoom").catch(function (err) {
+                return console.error(err.toString());
+            });
+        }).catch(function (err) {
+            return console.error(err.toString());
+        });
+
+        // Listen for messages from the server
+        connection.on("ReceiveMessage", function (user, message) {
+            const msg = document.createElement("div");
+            msg.textContent = `${user}: ${message}`;
+            document.getElementById("messagesList").appendChild(msg);
+        });
+
+        // Trigger message send on keyup (user typing)
+        document.getElementById("messageInput").addEventListener("keyup", function (event) {
+            const user = document.getElementById("userInput").value;
+            const message = document.getElementById("messageInput").value;
+            if (message.length > 0) {
+                connection.invoke("SendMessageToGroup", "defaultRoom", user, message).catch(function (err) {
+                    return console.error(err.toString());
+                });
+            }
+        });
+
+        function insertTable() {
+            TXTextControl.tables.add(5, 5, 10, function (e) {
+                if (e === true) {
+                    TXTextControl.tables.getItem(function (table) {
+                        table.cells.forEach(function (cell) {
+                            cell.setText("Cell text");
+                        });
+                    }, null, 10);
+                }
+            });
+        }
+    </script>
+}

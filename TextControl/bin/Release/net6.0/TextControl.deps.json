@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "TextControl/1.0.0": {
+        "dependencies": {
+          "TXTextControl.Web": "32.4.0"
+        },
+        "runtime": {
+          "TextControl.dll": {}
+        }
+      },
+      "TXTextControl.Web/32.4.0": {
+        "runtime": {
+          "lib/net6.0/TXTextControl.Web.DocumentEditor.dll": {
+            "assemblyVersion": "32.4.0.0",
+            "fileVersion": "32.4.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TextControl/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TXTextControl.Web/32.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-S6JRopp5oHddFE+QUtEqh/6Jng3ViNECKUCzlwsPtU1S8TWPh24pxmn2XYFtkqIUNNLwIeir+WWmSyNPGTj77w==",
+      "path": "txtextcontrol.web/32.4.0",
+      "hashPath": "txtextcontrol.web.32.4.0.nupkg.sha512"
+    }
+  }
+}
